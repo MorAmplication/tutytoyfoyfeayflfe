@@ -16,4 +16,13 @@ model User {
   username  String   @unique
   password  String
   roles     Json
+  mor       Mor?     @relation(fields: [morId], references: [id])
+  morId     String?
+}
+
+model Mor {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  users     User[]
 }
