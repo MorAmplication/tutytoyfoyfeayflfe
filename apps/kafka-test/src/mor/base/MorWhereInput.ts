@@ -15,6 +15,7 @@ import { StringFilter } from "../../util/StringFilter";
 import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { UserListRelationFilter } from "../../user/base/UserListRelationFilter";
+import { StringNullableFilter } from "../../util/StringNullableFilter";
 
 @InputType()
 class MorWhereInput {
@@ -40,6 +41,17 @@ class MorWhereInput {
     nullable: true,
   })
   users?: UserListRelationFilter;
+
+  @ApiProperty({
+    required: false,
+    type: StringNullableFilter,
+  })
+  @Type(() => StringNullableFilter)
+  @IsOptional()
+  @Field(() => StringNullableFilter, {
+    nullable: true,
+  })
+  name?: StringNullableFilter;
 }
 
 export { MorWhereInput as MorWhereInput };

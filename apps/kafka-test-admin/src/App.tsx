@@ -13,6 +13,10 @@ import { MorList } from "./mor/MorList";
 import { MorCreate } from "./mor/MorCreate";
 import { MorEdit } from "./mor/MorEdit";
 import { MorShow } from "./mor/MorShow";
+import { LoginList } from "./login/LoginList";
+import { LoginCreate } from "./login/LoginCreate";
+import { LoginEdit } from "./login/LoginEdit";
+import { LoginShow } from "./login/LoginShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -52,6 +56,13 @@ const App = (): React.ReactElement => {
           edit={MorEdit}
           create={MorCreate}
           show={MorShow}
+        />
+        <Resource
+          name="Login"
+          list={LoginList}
+          edit={LoginEdit}
+          create={LoginCreate}
+          show={LoginShow}
         />
       </Admin>
     </div>

@@ -1,11 +1,14 @@
 import * as React from "react";
+
 import {
   Create,
   SimpleForm,
   CreateProps,
   ReferenceArrayInput,
   SelectArrayInput,
+  TextInput,
 } from "react-admin";
+
 import { UserTitle } from "../user/UserTitle";
 
 export const MorCreate = (props: CreateProps): React.ReactElement => {
@@ -20,6 +23,7 @@ export const MorCreate = (props: CreateProps): React.ReactElement => {
         >
           <SelectArrayInput optionText={UserTitle} />
         </ReferenceArrayInput>
+        <TextInput label="Name" source="name" />
       </SimpleForm>
     </Create>
   );
