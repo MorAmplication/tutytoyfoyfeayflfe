@@ -49,6 +49,17 @@ class Mor {
   @Type(() => User)
   @IsOptional()
   users?: Array<User>;
+
+  @ApiProperty({
+    required: false,
+    type: String,
+  })
+  @IsString()
+  @IsOptional()
+  @Field(() => String, {
+    nullable: true,
+  })
+  name!: string | null;
 }
 
 export { Mor as Mor };

@@ -25,4 +25,15 @@ model Mor {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   users     User[]
+  name      String?  @map(name)
+}
+
+model Login {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  accessKey String?
+  username  String   @unique
+  password  String
+  roles     Json
 }
